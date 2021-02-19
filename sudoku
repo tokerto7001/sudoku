@@ -1,0 +1,27 @@
+sudoku = [
+  [0, 0, 0, 0, 6, 4, 0, 0, 0],
+  [7, 0, 0, 0, 0, 0, 3, 9, 0],
+  [8, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 5, 0, 2, 0, 6, 0],
+  [0, 8, 0, 4, 0, 0, 0, 0, 0],
+  [3, 5, 0, 6, 0, 0, 0, 7, 0],
+  [0, 0, 2, 0, 0, 0, 1, 0, 3],
+  [0, 0, 1, 0, 5, 9, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 7, 0, 0]
+]
+def display(x) :
+  for i in range(len(x)+4) :
+    if i % 4 == 0 :
+      x.insert(i, [(("-")*21)])
+  for j in range(13) : 
+    if j % 4 != 0 :
+      x[j].insert(3, "|")
+      x[j].insert(7, "|")
+  for ii in x :
+    if len(ii) == 1 :
+      print(ii[0])
+    elif len(ii) == 11 :
+      for iii in range(11):
+        print(ii[iii] , end = " ")
+      print("")
+display(sudoku)
